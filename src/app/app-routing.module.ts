@@ -3,12 +3,19 @@ import { RouterModule, Routes } from '@angular/router';
 import { StudentsListComponent } from './components/student-list/student-list.component';
 import { StudentsDetailsComponent } from './components/student-details/student-details.component';
 import { AddstudentComponent } from './components/add-student/add-student.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'students', pathMatch: 'full' },
   { path: 'students', component: StudentsListComponent },
   { path: 'students/:id', component: StudentsDetailsComponent },
-  { path: 'add', component: AddstudentComponent }
+  { path: 'add', component: AddstudentComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'reset-password', component: ResetPasswordComponent },
 ];
 
 @NgModule({

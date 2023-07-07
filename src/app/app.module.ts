@@ -8,6 +8,9 @@ import { AppComponent } from './app.component';
 import { AddstudentComponent } from './components/add-student/add-student.component';
 import { StudentsDetailsComponent } from './components/student-details/student-details.component';
 import { StudentsListComponent } from './components/student-list/student-list.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import { StudentsListComponent } from './components/student-list/student-list.co
     AppComponent,
     AddstudentComponent,
     StudentsDetailsComponent,
-    StudentsListComponent
+    StudentsListComponent,
+    LoginComponent,
+    RegisterComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
