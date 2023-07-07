@@ -1,16 +1,19 @@
 
-@import url("https://fonts.googleapis.com/css2?family=Catamaran&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-* {
-  font-family: "Catamaran", sans-serif;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-align: center;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: small;
+
 }
 
+.title{
+  font-size:20px;
+}
 /* .container{
-  background-color: aliceblue;
   margin: auto;
   width: 75%;
   margin-top: 5em;
@@ -19,12 +22,3 @@
   padding-bottom: 2em;
   box-shadow: 0 0.4rem 1rem 0 rgba(141, 178, 196, 0.5);
 } */
-
-
-.form-container
-{
-  margin: 20vh;
-  display: grid;
-  align-items: center;
-
-}
