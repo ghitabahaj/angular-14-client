@@ -13,9 +13,9 @@ const routes: Routes = [
   { path: 'students/:id', component: StudentsDetailsComponent },
   { path: 'add', component: AddstudentComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'reset-password', component: ResetPasswordComponent },
+  { path: 'login', component: LoginComponent , data: { navbarVisible: false }},
+  { path: 'register', component: RegisterComponent, data: { navbarVisible: false } },
+  { path: 'reset-password', component: ResetPasswordComponent , data: { navbarVisible: false }},
 ];
 
 @NgModule({
