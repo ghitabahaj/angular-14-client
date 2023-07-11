@@ -1,16 +1,16 @@
 <div class="form-container">
   <h3 class="text-center title mb-2">Login</h3>
-  <p class="text-center text-secondary">Welcome back !</p>
-<form>
-  <div>
-    <label for="email">Email</label>
-    <input type="email" id="email"  name="email" placeholder="Your Email" required>
-  </div>
-  <div>
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password" placeholder="Your Password" required>
-  </div>
-  <button type="submit" class="btn btn-dark mt-4 mb-4">Login</button>
-  <a  href="" >Don't have an account yet?</a>
-</form>
+  <p class="text-center text-secondary">Welcome back!</p>
+  <form [formGroup]="formLogin" (ngSubmit)="handleLogin()">
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your Email" formControlName="username" required>
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Your Password" formControlName="password" required>
+    </div>
+    <button type="submit" class="btn btn-dark mt-4 mb-4">Login</button>
+    <a href="">Don't have an account yet?</a>
+  </form>
 </div>

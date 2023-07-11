@@ -52,7 +52,6 @@
   <div class="input-group-append">
     <button
       class="btn btn-outline-danger"
-      (click)="searchTitle()"
     >
         Search
     </button>
@@ -66,16 +65,18 @@
       <tr>
         <th class="fw-bold">Student's CNE</th>
         <th class="fw-bold">Student's Full Name</th>
+        <th class="fw-bold">Student's Notes</th>
         <th class="fw-bold">Events</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td class="text-dark"></td>
-        <td class="text-dark"></td>
+        <td class="text-dark">A140002907</td>
+        <td class="text-dark">GHITA BAHAJ</td>
+        <td class="text-dark"> <button class="btn btn-secondary text-white rounded-pill me-4"> Show details</button></td>
         <td class="text-dark">
           <button class="btn btn-primary text-white rounded-pill me-4"> Update</button>
-          <button class="btn btn-danger rounded-pill ms-3" id="remove-btn">Remove</button>
+          <button class="btn btn-danger rounded-pill ms-4" >Remove</button>
         </td>
       </tr>
     </tbody>

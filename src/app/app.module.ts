@@ -1,39 +1,46 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddstudentComponent } from './components/add-student/add-student.component';
-import { StudentsDetailsComponent } from './components/student-details/student-details.component';
 import { StudentsListComponent } from './components/student-list/student-list.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AddClassComponent } from './components/add-class/add-class.component';
+import { ClassListComponent } from './components/class-list/class-list.component';
+import { NotAuthorizedComponent } from './not-authorized/not-authorized.component';
+import {AppHttpInterceptor} from "./services/app-http.interceptor";
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AddstudentComponent,
-    StudentsDetailsComponent,
     StudentsListComponent,
     LoginComponent,
     RegisterComponent,
     ResetPasswordComponent,
     NavbarComponent,
-    AddClassComponent
+    AddClassComponent,
+    ClassListComponent,
+    NotAuthorizedComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {provide : HTTP_INTERCEPTORS, useClass : AppHttpInterceptor, multi : true}
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

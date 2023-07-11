@@ -1,6 +1,5 @@
-export class Student {
-  id?: any;
-  title?: string;
-  description?: string;
-  published?: boolean;
+export interface Student {
+  id : number,
+  name : string,
+  cne : string
 }
