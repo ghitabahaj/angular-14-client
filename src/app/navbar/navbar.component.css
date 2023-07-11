@@ -1,0 +1,26 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: small;
+
+}
+
+.navbar-brand {
+    font-size: 1.2rem; /* Increase the font size of the navbar brand */
+  }
+  
+  .nav-link {
+    font-size: 1rem; /* Increase the font size of the nav links */
+  }
+  
+  .navbar-toggler {
+    border: none; /* Remove the border from the navbar toggler */
+  }
+  
+  .navbar-nav {
+    margin-right: 10px; /* Add some right margin to the navbar links */
+  }
+  

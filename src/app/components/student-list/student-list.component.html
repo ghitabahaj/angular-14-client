@@ -1,4 +1,4 @@
-
+<!-- 
 
 <div class="list row">
   <div class="col-md-8">
@@ -28,7 +28,7 @@
         [class.active]="i == currentIndex"
         (click)="setActiveStudent(student, i)"
       >
-        {{ student.title }}
+        {{ student.name }}
       </li>
     </ul>
 
@@ -42,4 +42,42 @@
       [currentStudent]="currentStudent"
     ></app-student-details>
   </div>
+</div> -->
+<div class="input-group mb-3">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="  Search by title"
+  />
+  <div class="input-group-append">
+    <button
+      class="btn btn-outline-danger"
+      (click)="searchTitle()"
+    >
+        Search
+    </button>
+  </div>
+</div>
+
+
+<div class="card-body table-responsive mt-2">
+  <table class="table border-secondary text-center table-hover">
+    <thead>
+      <tr>
+        <th class="fw-bold">Student's CNE</th>
+        <th class="fw-bold">Student's Full Name</th>
+        <th class="fw-bold">Events</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="text-dark"></td>
+        <td class="text-dark"></td>
+        <td class="text-dark">
+          <button class="btn btn-primary text-white rounded-pill me-4"> Update</button>
+          <button class="btn btn-danger rounded-pill ms-3" id="remove-btn">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

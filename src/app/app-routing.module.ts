@@ -6,12 +6,15 @@ import { AddstudentComponent } from './components/add-student/add-student.compon
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { AddClassComponent } from './components/add-class/add-class.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'students', pathMatch: 'full' },
   { path: 'students', component: StudentsListComponent },
   { path: 'students/:id', component: StudentsDetailsComponent },
   { path: 'add', component: AddstudentComponent },
+  { path: 'addClass', component: AddClassComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent , data: { navbarVisible: false }},
   { path: 'register', component: RegisterComponent, data: { navbarVisible: false } },

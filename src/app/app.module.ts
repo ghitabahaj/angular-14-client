@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AddClassComponent } from './components/add-class/add-class.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     LoginComponent,
     RegisterComponent,
     ResetPasswordComponent,
-    NavbarComponent
+    NavbarComponent,
+    AddClassComponent
   ],
   imports: [
     BrowserModule,

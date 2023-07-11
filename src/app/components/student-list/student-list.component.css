@@ -1,5 +1,29 @@
-.list {
-  text-align: left;
-  max-width: 750px;
-  margin: auto;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: small;
+
 }
+
+  
+
+  
+  .btn-primary,
+  .btn-danger {
+    padding: 0.2rem 1rem; /* Adjust the padding for the buttons */
+  }
+  
+  .btn-primary.rounded-pill,
+  .btn-danger.rounded-pill {
+    border-radius: 10px; /* Apply rounded corners to the buttons */
+  }
+  
+  .btn-primary i,
+  .btn-danger i {
+    margin-right: 0.2rem; /* Add spacing between the icon and text */
+  }
+  
