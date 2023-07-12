@@ -22,6 +22,10 @@ export class LoginComponent implements OnInit{
   }
 
   handleLogin() {
+
+    // if(this.formLogin.value.username=="admin" && this.formLogin.value.password=="1234"){
+    //   this.router.navigateByUrl("/students");
+    // }
     let username=this.formLogin.value.username;
     let password=this.formLogin.value.password;
     this.authService.login(username, password)

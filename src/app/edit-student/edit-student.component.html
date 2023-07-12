@@ -1,0 +1,26 @@
+<div class="form-container">
+  <div class="card col-8 m-auto shadow rounded py-4 p-3">
+    <div class="card-body">
+      <form [formGroup]="studentFormGroup" (ngSubmit)="updateStudent()">
+        <div class="w-100 my-3 mb-5">
+          <p class="text-center title">Edit an existing Student</p>
+          <p class="text-center text-secondary">Update this form below</p>
+        </div>
+
+        <div class="row d-flex flex-column my-3 col-9 m-auto pb-3">
+          <label for="Input1" class="gap-3">Student's Full Name</label>
+          <input type="text" class="form-control" formControlName="name" placeholder="Student's Full Name" required>
+        </div>
+
+        <div class="row d-flex flex-column my-3 col-9 m-auto pb-3">
+          <label for="Input2">CNE</label>
+          <input type="text" class="form-control" formControlName="cne" placeholder="Code Massar" required>
+        </div>
+
+        <div class="m-auto">
+          <button type="submit" style="width: 50%; margin-left: 25%;" class="mt-3 text-center border-rounded py-1 btn btn-warning text-light">Update student</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

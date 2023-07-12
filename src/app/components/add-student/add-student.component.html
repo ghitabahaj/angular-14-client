@@ -22,14 +22,14 @@
       <input type="text" class="form-control"  placeholder=" Code Massar">
     </div>
    
-      <div class="row d-flex flex-column my-3 col-9 m-auto pb-3">
-        <label for="Input3">Student's class </label>
-        <select name="class" type="text" class="form-control">
-          <option value="0"  selected>Choose Student's Class</option>
-          <option value="1" >ada lovlace</option>
-          <option value="2" >ada lovlace</option>
-        </select>
-      </div>
+    <div class="row d-flex flex-column my-3 col-9 m-auto pb-3">
+      <label for="Input3">Student's Class</label>
+      <select class="form-control" [(ngModel)]="selectedClass"  name="class" required>
+        <option value="0" selected disabled>Choose Student's Class</option>
+        <option *ngFor="let class of classes" [value]="class.id">{{ class.name }}</option>
+      </select>
+    </div>
+    
       <div class="m-auto">
       <button type="submit" style="width: 50%; margin-left: 25%;" class=" mt-3 text-center border-rounded py-1 btn btn-dark">Save student</button>
     </div>

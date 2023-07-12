@@ -1,26 +1,41 @@
 import { Injectable } from '@angular/core';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class AppStateService {
-  public stuentState :any ={
-
+  public studentState: any = {
+    students: [],
+    keyword: "",
+    totalStudents: 0,
+    status: "",
+    errorMessage: ""
   }
 
-  public authState :any ={
-    isAuthenticated : false,
-    username : undefined,
-    roles : undefined,
-    token : undefined
+  public authState: any = {
+    isAuthenticated: false,
+    username: undefined,
+    roles: undefined,
+    token: undefined
   }
+
   constructor() { }
 
-  public  setProductState(state :any):void {
-    this.stuentState={...this.stuentState, ...state}
+  public setStudentState(state: any): void {
+    this.studentState = { ...this.studentState, ...state }
   }
-  public setAuthState(state : any) :void{
-    this.authState={...this.authState, ...state};
+
+  public updateStudentState(studentId: number, updatedStudent: any): void {
+    const updatedStudents = this.studentState.students.map((student: any) => {
+      if (student.id === studentId) {
+        return { ...student, ...updatedStudent };
+      }
+      return student;
+    });
+    this.setStudentState({ students: updatedStudents });
+  }
+
+  public setAuthState(state: any): void {
+    this.authState = { ...this.authState, ...state };
   }
 }

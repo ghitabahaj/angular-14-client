@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddstudentComponent } from './components/add-student/add-student.component';
+import { AddStudentComponent } from './components/add-student/add-student.component';
 import { StudentsListComponent } from './components/student-list/student-list.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -15,12 +15,13 @@ import { ClassListComponent } from './components/class-list/class-list.component
 import { NotAuthorizedComponent } from './not-authorized/not-authorized.component';
 import {AppHttpInterceptor} from "./services/app-http.interceptor";
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditStudentComponent } from './edit-student/edit-student.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddstudentComponent,
+    AddStudentComponent,
     StudentsListComponent,
     LoginComponent,
     RegisterComponent,
@@ -28,7 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     AddClassComponent,
     ClassListComponent,
-    NotAuthorizedComponent
+    NotAuthorizedComponent,
+    EditStudentComponent
   ],
   imports: [
     BrowserModule,

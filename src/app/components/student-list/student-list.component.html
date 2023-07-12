@@ -1,64 +1,3 @@
-<!-- 
-
-<div class="list row">
-  <div class="col-md-8">
-    <div class="input-group mb-3">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Search by title"
-        [(ngModel)]="title"
-      />
-      <div class="input-group-append">
-        <button
-          class="btn btn-outline-secondary"
-          (click)="searchTitle()"
-        >
-          Search
-        </button>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <h4>Students List</h4>
-    <ul class="list-group">
-      <li
-        class="list-group-item"
-        *ngFor="let student of students; let i = index"
-        [class.active]="i == currentIndex"
-        (click)="setActiveStudent(student, i)"
-      >
-        {{ student.name }}
-      </li>
-    </ul>
-
-    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllStudents()">
-      Remove All
-    </button>
-  </div>
-  <div class="col-md-6">
-    <app-student-details
-      [viewMode]="true"
-      [currentStudent]="currentStudent"
-    ></app-student-details>
-  </div>
-</div> -->
-<div class="input-group mb-3">
-  <input
-    type="text"
-    class="form-control"
-    placeholder="  Search by title"
-  />
-  <div class="input-group-append">
-    <button
-      class="btn btn-outline-danger"
-    >
-        Search
-    </button>
-  </div>
-</div>
-
-
 <div class="card-body table-responsive mt-2">
   <table class="table border-secondary text-center table-hover">
     <thead>
@@ -70,15 +9,18 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td class="text-dark">A140002907</td>
-        <td class="text-dark">GHITA BAHAJ</td>
-        <td class="text-dark"> <button class="btn btn-secondary text-white rounded-pill me-4"> Show details</button></td>
+      <tr *ngFor="let student of students">
+        <td class="text-dark">{{ student.cne }}</td>
+        <td class="text-dark">{{ student.name }}</td>
         <td class="text-dark">
-          <button class="btn btn-primary text-white rounded-pill me-4"> Update</button>
-          <button class="btn btn-danger rounded-pill ms-4" >Remove</button>
+          <button class="btn btn-secondary text-white rounded-pill me-4">Show details</button>
+        </td>
+        <td class="text-dark">
+          <button class="btn btn-primary text-white rounded-pill me-4" (click)="handleEdit(student)">Update</button>
+          <button class="btn btn-danger rounded-pill ms-4" (click)="handleDelete(student)">Remove</button>
         </td>
       </tr>
     </tbody>
   </table>
 </div>
+

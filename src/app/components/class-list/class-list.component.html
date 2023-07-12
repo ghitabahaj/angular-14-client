@@ -1,18 +1,9 @@
 <div class="input-group mb-3">
-    <input
-      type="text"
-      class="form-control"
-      placeholder="  Search by title"
-    />
+    <input type="text" class="form-control" placeholder="Search by title">
     <div class="input-group-append">
-      <button
-        class="btn btn-outline-danger"
-      >
-          Search
-      </button>
+      <button class="btn btn-outline-danger">Search</button>
     </div>
   </div>
-  
   
   <div class="card-body table-responsive mt-2">
     <table class="table border-secondary text-center table-hover">
@@ -24,15 +15,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="text-dark">Sharp Coders</td>
-          <td class="text-dark">21</td>
+        <tr *ngFor="let classItem of classes">
+          <td class="text-dark">{{ classItem.name }}</td>
+          <td class="text-dark">{{ classItem.numberOfStudents }}</td>
           <td class="text-dark">
-            <button class="btn btn-primary text-white rounded-pill me-4 justify-content-between"> Update</button>
-            <button class="btn btn-danger rounded-pill ms-4" >Remove</button>
+            <button class="btn btn-primary text-white rounded-pill me-4 justify-content-between">Update</button>
+            <button class="btn btn-danger rounded-pill ms-4">Remove</button>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
+  
   

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Student } from "src/app/models/student.model";
+import { StudentService } from 'src/app/services/student.service';
+import {Router} from "@angular/router";
+import {AppStateService} from "src/app/services/app-state.service";
 
 @Component({
   selector: 'app-students-list',
@@ -6,13 +10,43 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./student-list.component.css']
 })
 export class StudentsListComponent implements OnInit {
+  students: Student[] = [];
 
+  constructor(private studentService:StudentService,
+    private router : Router , public appState : AppStateService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
-
+  ngOnInit() {
+    this.fetchStudents();
   }
 
-  
+  fetchStudents() {
+    this.studentService.fetchStudents().subscribe(
+      (students: Student[]) => {
+        this.students = students;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
+
+  handleDelete(student: Student) {
+    if (confirm("Are you sure?")) {
+      this.studentService.deleteStudent(student).subscribe(
+        () => {
+          console.log('Student deleted successfully');
+          // You may want to refresh the student list after deletion
+          this.fetchStudents();
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
+    }
+  }
+
+  handleEdit(student: Student) {
+    console.log("test");
+    this.router.navigateByUrl(`editStudent/${student.id}`);
+  }
 }
