@@ -18,6 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { EditStudentComponent } from './edit-student/edit-student.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

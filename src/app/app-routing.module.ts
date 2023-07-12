@@ -9,16 +9,17 @@ import { AddClassComponent } from './components/add-class/add-class.component';
 import { ClassListComponent } from './components/class-list/class-list.component';
 import { NotAuthorizedComponent } from './not-authorized/not-authorized.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
+import { AuthGuard } from 'src/app/guards/auth.guard';
 
 
 
 const routes: Routes = [
   { path: "login", component: LoginComponent , data: { navbarVisible: false }},
-  { path: 'students', component: StudentsListComponent},
-  { path: 'editStudent/:id', component: EditStudentComponent},
-  { path: 'add', component: AddStudentComponent },
-  { path: 'addClass', component: AddClassComponent },
-  { path: 'classes', component: ClassListComponent },
+  { path: 'students', component: StudentsListComponent, canActivate: [AuthGuard]},
+  { path: 'editStudent/:id', component: EditStudentComponent, canActivate: [AuthGuard]},
+  { path: 'add', component: AddStudentComponent , canActivate: [AuthGuard]  },
+  { path: 'addClass', component: AddClassComponent, canActivate: [AuthGuard] },
+  { path: 'classes', component: ClassListComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent, data: { navbarVisible: false } },
   { path: 'register', component: RegisterComponent, data: { navbarVisible: false } },
   { path: 'reset-password', component: ResetPasswordComponent, data: { navbarVisible: false } },

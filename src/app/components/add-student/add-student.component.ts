@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-add-student',
@@ -8,12 +9,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-student.component.css']
 })
 export class AddStudentComponent implements OnInit {
-  fullName: string = '';
+  name: string = '';
   cne: string = '';
   selectedClass: string = '';
   classes: any[] = [];
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.fetchClasses();
@@ -32,8 +37,14 @@ export class AddStudentComponent implements OnInit {
   }
 
   addStudent() {
+    if (!this.authService.isAuthenticated()) {
+      // Token check failed, handle unauthorized access
+      this.router.navigateByUrl('/login');
+      return;
+    }
+
     const studentData = {
-      fullName: this.fullName,
+      fullName: this.name,
       cne: this.cne,
       selectedClass: this.selectedClass
     };
@@ -50,3 +61,4 @@ export class AddStudentComponent implements OnInit {
     );
   }
 }
+
