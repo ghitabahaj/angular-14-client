@@ -4,6 +4,7 @@
       <tr>
         <th class="fw-bold">Student's CNE</th>
         <th class="fw-bold">Student's Full Name</th>
+        <th class="fw-bold">Student's Class</th>
         <th class="fw-bold">Student's Notes</th>
         <th class="fw-bold">Events</th>
       </tr>
@@ -15,6 +16,9 @@
         <td class="text-dark">
           <button class="btn btn-secondary text-white rounded-pill me-4">Show details</button>
         </td>
+        <td class="text-dark">{{ getClassById(student.classId)?.name }}/td>
+
+   
         <td class="text-dark">
           <button class="btn btn-primary text-white rounded-pill me-4" (click)="handleEdit(student)">Update</button>
           <button class="btn btn-danger rounded-pill ms-4" (click)="handleDelete(student)">Remove</button>

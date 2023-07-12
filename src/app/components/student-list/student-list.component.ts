@@ -3,6 +3,7 @@ import { Student } from "src/app/models/student.model";
 import { StudentService } from 'src/app/services/student.service';
 import {Router} from "@angular/router";
 import {AppStateService} from "src/app/services/app-state.service";
+import { Class } from 'src/app/models/class.model';
 
 @Component({
   selector: 'app-students-list',
@@ -11,6 +12,7 @@ import {AppStateService} from "src/app/services/app-state.service";
 })
 export class StudentsListComponent implements OnInit {
   students: Student[] = [];
+  classes: Class[] = [];
 
   constructor(private studentService:StudentService,
     private router : Router , public appState : AppStateService) { }
@@ -48,5 +50,9 @@ export class StudentsListComponent implements OnInit {
   handleEdit(student: Student) {
     console.log("test");
     this.router.navigateByUrl(`editStudent/${student.id}`);
+  }
+
+  getClassById(classId: number): Class | undefined {
+    return this.classes.find((c: Class) => c.id === classId);
   }
 }
